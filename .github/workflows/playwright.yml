@@ -18,7 +18,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: cross-env test_env=local npx playwright test --trace on
+        run: npx playwright test --trace on
       - uses: actions/upload-artifact@v3
         if: always()
         with:

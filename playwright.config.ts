@@ -6,7 +6,7 @@ if (process.env.test_env){
   dotenv.config({ path: `.env.${process.env.test_env}`,
 override: true, });
 } else {
-dotenv.config({ path: path.resolve(__dirname, '.env.local') });
+dotenv.config({ path: '.env.local', override: true, });
 }
 export const STORAGE_STATE = path.join(__dirname, 'playwright/.auth/user.json');
 export default defineConfig({

@@ -24,6 +24,7 @@ export class InventoryPage {
     }
 
     //methods
+
     async InventoryPageLoads() {
         await expect(this.inventoryList).toBeVisible();
         await expect(this.inventoryItems).toHaveCount(6);

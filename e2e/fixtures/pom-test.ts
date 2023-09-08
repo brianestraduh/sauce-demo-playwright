@@ -1,10 +1,12 @@
 import {test as base} from '@playwright/test';
 import {LoginPage} from '../fixtures/pages/login-page';
 import {InventoryPage} from '../fixtures/pages/inventory-page';
+import {ProductPage} from '../fixtures/pages/product-page';
 
 type SauceFixtures = {
     loginPage: LoginPage;
     inventoryPage: InventoryPage;
+    productPage: ProductPage;
 };
 
 export const test = base.extend<SauceFixtures>({
@@ -13,6 +15,9 @@ export const test = base.extend<SauceFixtures>({
     },
     inventoryPage: async ({page}, use) => {
         await use(new InventoryPage(page));
-    }
+    },
+    productPage: async ({page}, use) => {
+        await use(new ProductPage(page));
+    },
 });
 export {expect} from '@playwright/test';

@@ -12,6 +12,7 @@ export class InventoryPage {
     readonly itemNames: Array<string>;
     readonly sortedItemNames: Array<string>;
     readonly itemPrices: Locator;
+    readonly backPackProductTitle: Locator;
 
     //constructor
     constructor(page: Page) {
@@ -21,6 +22,7 @@ export class InventoryPage {
         this.sortButton = this.page.locator('.product_sort_container');
         this.inventoryItemTitles = this.page.locator('.inventory_item_name');
         this.itemPrices = this.page.locator('.inventory_item_price');
+        this.backPackProductTitle = this.page.getByText('Sauce Labs Backpack');
     }
 
     //methods
@@ -76,6 +78,9 @@ export class InventoryPage {
         console.log(itemPrices, sortedItemPrices);
         expect(itemPrices).toEqual(sortedItemPrices);
         
+    }
+    async openBackPackProductPage() {
+        await this.backPackProductTitle.click();
     }
     
 

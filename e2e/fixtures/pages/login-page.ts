@@ -23,5 +23,14 @@ export class LoginPage {
         await this.password.fill(ENV.PASSWORD || 'secret_sauce');
         await this.loginButton.click();
     }
-
+    async emptyFailedLoginAttempt() {
+        await this.page.goto('/');
+        await this.loginButton.click();
+        await expect(this.page.locator('[data-test="error"]')).toBeVisible();
+    }
+    async invalidUsernameLoginAttempt() {
+        await this.page.goto('/');
+        await this.username.fill('invalid_username');
+        await this.password.fill(ENV.PASSWORD || 'secret_sauce'); 
+    }
 }

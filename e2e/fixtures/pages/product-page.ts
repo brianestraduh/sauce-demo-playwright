@@ -23,7 +23,7 @@ export class ProductPage {
     }
     //methods
     async ProductPageLoads() {
-        await expect(this.page).toHaveURL('https://www.saucedemo.com/inventory-item.html?id=4');
+        await expect(this.page).toHaveURL('/inventory-item.html?id=4');
         await expect(this.productTitle).toBeVisible();
         await expect(this.productDescription).toBeVisible();
         await expect(this.productPrice).toBeVisible();

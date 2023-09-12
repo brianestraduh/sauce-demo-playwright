@@ -12,7 +12,7 @@ export const STORAGE_STATE = path.join(__dirname, 'playwright/.auth/user.json');
 export default defineConfig({
   reporter: 'html',
   use:{
-baseURL: process.env.BASE_URL || 'https://localhost:3000',
+baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
   },
   projects: [
     {

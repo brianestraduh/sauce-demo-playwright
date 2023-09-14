@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test_local": "cross-env test_env=local npx playwright test --trace on",
-    "test_prod": "cross-env test_env=prod npx playwright test --trace on"
+    "test:local": "cross-env test_env=local npx playwright test --trace on",
+    "test:prod": "cross-env test_env=prod npx playwright test --trace on"
   },
   "keywords": [],
   "author": "",

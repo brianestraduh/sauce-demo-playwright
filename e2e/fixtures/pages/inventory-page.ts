@@ -17,6 +17,7 @@ export class InventoryPage {
     readonly addJacketToCartButton: Locator;
     readonly removeBackPackFromCartButton: Locator;
     readonly removeJacketFromCartButton: Locator;
+    readonly cartButton: Locator;
 
     //constructor
     constructor(page: Page) {
@@ -31,6 +32,7 @@ export class InventoryPage {
         this.addJacketToCartButton = this.page.locator('[data-test="add-to-cart-sauce-labs-fleece-jacket"]')
         this.removeBackPackFromCartButton = this.page.locator('[data-test="remove-sauce-labs-backpack"]')
         this.removeJacketFromCartButton = this.page.locator('[data-test="remove-sauce-labs-fleece-jacket"]')
+        this.cartButton = this.page.locator('a').filter({ hasText: '2' })
     }
 
     //methods
@@ -100,5 +102,8 @@ export class InventoryPage {
         expect(this.removeBackPackFromCartButton).toBeVisible();
         expect(this.removeJacketFromCartButton).toBeVisible();
         expect(this.page.locator('#shopping_cart_container a'))
+    }
+    async openCartPage() {
+        await this.cartButton.click();
     }
 }

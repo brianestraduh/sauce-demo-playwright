@@ -3,9 +3,9 @@
     {
       "name": "session-username",
       "value": "standard_user",
-      "domain": "localhost",
+      "domain": "www.saucedemo.com",
       "path": "/",
-      "expires": 1694503671,
+      "expires": 1694639779,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"

@@ -26,5 +26,12 @@ test.describe('Inventory Page tests', () => {
     test('should sort by price, high to low', async ({inventoryPage}) => {
         await inventoryPage.SortByPriceHighToLow();
     });
+    test('add 2 items to cart', async ({inventoryPage})=> {
+        await inventoryPage.addItemsToCart();
+    });
+    test('should remove 2 items from cart', async ({inventoryPage})=> {
+        await inventoryPage.addItemsToCart();
+        await inventoryPage.removeItemsFromCart();
+    });
 
 });
